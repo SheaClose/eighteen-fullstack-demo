@@ -1,0 +1,21 @@
+.side-bar {
+  width: 25vw;
+  height: 90vh;
+  background: #ccc;
+}
+.side-bar > ul {
+  margin: 0;
+  height: 100%;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.side-bar > ul a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+  color: black;
+}

@@ -1,0 +1,26 @@
+.home-comp {
+  display: flex;
+}
+.container {
+  width: 75vw;
+  height: 90vh;
+}
+.splash-img {
+  height: 66%;
+  background: url("https://fastly.hautelookcdn.com/assets/230510tommybahamawc/event-hero.jpg");
+  background-size: cover;
+}
+
+.card-container {
+  height: 34%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card {
+  padding: 10px;
+  border: 0.25px solid #ccc;
+  box-shadow: 3px 3px 11.5px -3px #bbb;
+  font-size: 12px;
+  cursor: pointer;
+}
