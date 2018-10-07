@@ -11,7 +11,6 @@ class Cart extends Component {
   }
   componentDidMount() {
     axios.get("/api/cart").then(({ data }) => {
-      console.log(" data: ", data);
       this.setState({ cart: data });
     });
   }
@@ -34,7 +33,7 @@ class Cart extends Component {
       (tot, elem) => (tot += elem.price * elem.quantity),
       0
     );
-    console.log("quant: ", quant);
+
     return (
       <div className="">
         <div>{cartContents}</div>

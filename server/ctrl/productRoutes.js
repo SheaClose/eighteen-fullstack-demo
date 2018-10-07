@@ -1,6 +1,5 @@
-let { getProducts, getProductsByCat } = require("./products");
+let { getProducts } = require("./products");
 
 module.exports = app => {
   app.get("/api/products", getProducts);
-  app.get("/api/products/:cat", getProductsByCat);
 };

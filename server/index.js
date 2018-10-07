@@ -41,7 +41,6 @@ passport.use(
       scope: "openid email profile"
     },
     (accessToken, refreshToken, extraParams, profile, done) => {
-      console.log("profile: ", profile);
       return done(null, profile);
     }
   )
@@ -59,25 +58,19 @@ passport.deserializeUser((user, done) => {
 app.get(
   "/login",
   (req, res, next) => {
-    console.log("middle");
     next();
   },
   passport.authenticate("auth0", {
     successRedirect: "/auth",
     failureRedirect: "/fail",
     failureFlash: true
-  }),
-  (...rest) => console.log("rest: ", rest)
+  })
 );
 app.get("/auth", (req, res) => {
-  console.log("/auth");
   res.status(200).json(req.user);
 });
 app.get("/fail", (req, res) => {
-  console.log("/fail");
   res.status(200).json("not logged in");
 });
 masterRoutes(app);
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+app.listen(port, () => {});
