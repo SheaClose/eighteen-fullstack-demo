@@ -1,11 +1,7 @@
 module.exports = {
-  getProducts(req, res) {
+  async getProducts(req, res) {
     const db = req.app.get("db");
-    return db.products
-      .find()
-      .then(prods => {
-        return res.status(200).json(prods);
-      })
-      .catch(console.log);
+    let prods = await db.products.find();
+    return res.status(200).json(prods);
   }
 };
