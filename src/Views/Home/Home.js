@@ -14,7 +14,7 @@ class Home extends Component {
     let sale = products =>
       products.filter(c => c.sale).map(prod => (
         <Link key={prod.id} to={`/product/${prod.id}`}>
-          <div className="card">
+          <div className="my-card">
             <img src={prod.img_url} alt={prod.title} width="100" />
             <div>{prod.title}</div>
           </div>
@@ -26,7 +26,7 @@ class Home extends Component {
         {ctx => (
           <div className="home-comp">
             <SideBar />
-            <main className="container">
+            <main className="my-container">
               <Link to="/store">
                 <section className="splash-img" />
               </Link>
